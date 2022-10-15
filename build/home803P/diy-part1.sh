@@ -31,5 +31,5 @@ echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
 
 #sirpdboy
 # autotimeset 定时设置插件
-git clone https://github.com/sirpdboy/luci-app-autotimeset package/lean/luci-app-autotimeset
+# git clone https://github.com/sirpdboy/luci-app-autotimeset package/lean/luci-app-autotimeset
 
