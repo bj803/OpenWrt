@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: build-home803PmosDNS
+name: build-home803P2DNS
 
 on:
   repository_dispatch:
@@ -23,9 +23,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   #FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: build/home803PmosDNS/home803PmosDNS.config
-  DIY_P1_SH: build/home803PmosDNS/diy-part1.sh
-  DIY_P2_SH: build/home803PmosDNS/diy-part2.sh
+  CONFIG_FILE: build/home803P2DNS/home803P2DNS.config
+  DIY_P1_SH: build/home803P2DNS/diy-part1.sh
+  DIY_P2_SH: build/home803P2DNS/diy-part2.sh
   SSH_ACTIONS: false
   UPLOAD_CONFIG: true
   UPLOAD_BIN_DIR: false
