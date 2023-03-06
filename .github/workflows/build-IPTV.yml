@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: build-803PmosDNS
+name: build-IPTV
 
 on:
   repository_dispatch:
