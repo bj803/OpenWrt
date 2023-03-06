@@ -16,8 +16,36 @@ sed -i 's/192.168.1.1/192.168.111.3/g' package/base-files/files/bin/config_gener
 # sed -i 's/+IPV6:kmod-nf-conntrack6//g' package/network/config/firewall/Makefile
 # sed -i 's/+IPV6:libip6tc//g' package/network/utils/iptables/Makefile
 
+#!/bin/bash
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# File name: diy-part2.sh
+# Description: OpenWrt DIY script part 2 (After Update feeds)
+#
+
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.111.3/g' package/base-files/files/bin/config_generate
+# sed -i 's/+IPV6:libip6tc//g' package/network/config/firewall/Makefile
+# sed -i 's/+IPV6:kmod-nf-conntrack6//g' package/network/config/firewall/Makefile
+# sed -i 's/+IPV6:libip6tc//g' package/network/utils/iptables/Makefile
+
+# 删除原主题
+rm -rf package/lean/luci-theme-argon
+
+# 添加新的主题
+git clone https://github.com/kenzok8/luci-theme-ifit.git package/lean/luci-theme-ifit
+
+# 取消bootstrap为默认主题
+sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+
 # 修改默认主题
-sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" feeds/luci/collections/luci/Makefile
+sed -i "s/luci-theme-bootstrap/luci-theme-ifit/g" feeds/luci/collections/luci/Makefile
+# sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" feeds/luci/collections/luci/Makefile
 
 # 修改机器名称
 sed -i "s/OpenWrt/Home803P/g" package/base-files/files/bin/config_generate
@@ -64,3 +92,4 @@ sed -i 's/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/root:$1$qTM.tEk
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
