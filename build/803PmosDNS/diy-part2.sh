@@ -28,12 +28,6 @@ sed -i 's/192.168.1.1/192.168.111.3/g' package/base-files/files/bin/config_gener
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# Modify default IP
-sed -i 's/192.168.1.1/192.168.111.3/g' package/base-files/files/bin/config_generate
-# sed -i 's/+IPV6:libip6tc//g' package/network/config/firewall/Makefile
-# sed -i 's/+IPV6:kmod-nf-conntrack6//g' package/network/config/firewall/Makefile
-# sed -i 's/+IPV6:libip6tc//g' package/network/utils/iptables/Makefile
-
 # 删除原主题
 rm -rf package/lean/luci-theme-argon
 
